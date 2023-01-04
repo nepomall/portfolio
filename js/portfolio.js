@@ -110,6 +110,23 @@ $(document).ready(function () {
 
     skillBtn.click(function () {
         $('.skill_section').addClass('active');
+
+        setTimeout(function () {
+            $('.chart').easyPieChart({
+                barColor: "#efa903",
+                trackColor: '#1f2029',
+                scaleColor: false,
+                lineCap: "round",
+                lineWidth: 20,
+                size: 200,
+                animate: 1000,
+                onStart: $.noop,
+                onStop: $.noop,
+                onStep: function (from, to, percent) {
+                    $(this.el).find('.percent').text(Math.round(percent));
+                }
+            });
+        }, 1200);
     });
 
     projectBtn.click(function () {
@@ -124,4 +141,33 @@ $(document).ready(function () {
         }, 800);
     });
 
+    // 커버플로우 슬라이드
+    const coverFlow = new Swiper('.coverflow .swiper-container', {
+        effect: 'coverflow',
+        loop: true,
+        // autoplay: true,
+        loopedSlides: 3,
+        centeredSlides: true,
+        coverflowEffect: {
+            rotate: 0,
+            depth: 300,
+            slideShadows: false,
+            stretch: 100,
+        },
+    });
+
+    // 페이드플로우 슬라이드
+    const fadeFlow = new Swiper('.fadeflow .swiper-container', {
+        effect: 'fade',
+        loop: true,
+        loopedSlides: 3,
+        allowTouchMove: false,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+    coverFlow.controller.control = fadeFlow;
+    fadeFlow.controller.control = coverFlow;
 });

@@ -303,7 +303,7 @@ section {
     display: block;
 }
 
-/* about 섹션 */
+/* contact 섹션 */
 .contact_section {
     right: -100%;
     display: flex;
@@ -343,17 +343,197 @@ section {
     margin-bottom: 15px;
 }
 
-
 /* bottom 섹션 */
 .skill_section,
 .project_section {
     bottom: -100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
 }
 
 .skill_section.active,
 .project_section.active {
     transition-delay: 0.5s;
     bottom: 0;
+}
+
+.skill_section h3,
+.project_section h3{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.skill_section h3::after,
+.project_section h3::after{
+    display: none;
+}
+
+.skill_section .chart_wrap{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill_section .chart_wrap li{
+    width: 220px;
+    min-height: 265px;
+}
+
+.skill_section .chart_wrap p{
+    font-size: 22px;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.skill_section .chart{
+    position: relative;
+    margin: auto;
+}
+
+.skill_section .chart .percent{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 20px;
+    transform: translate(-50%, -50%);
+}
+
+.skill_section .chart .percent::after{
+    content: '%';
+}
+
+.project_section .content_box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70%;
+}
+
+/* 커버 슬라이드 */
+.project_section .coverflow {
+    width: 650px;
+    height: 430px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+}
+
+.project_section .coverflow .swiper-container {
+    width: 430px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.project_section .coverflow .swiper-slide {
+    width: 50%;
+}
+
+.project_section .coverflow .swiper-slide img {
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
+}
+
+.project_section .coverflow .swiper-slide.swiper-slide-visible img {
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+    filter: blur(0px);
+}
+
+/* 페이드 슬라이드 */
+.project_section .fadeflow,
+.project_section .fadeflow .swiper-container {
+    width: 500px;
+    height: 430px;
+}
+
+.project_section .fadeflow .swiper-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.project_section .fadeflow .swiper-slide{
+    height: 100%;
+}
+
+.project_section .fadeflow .text_box {
+    width: 100%;
+    height: 100%;
+    background: #1f2029;
+    color: #fff;
+}
+
+.project_section .fadeflow h3 {
+    transform: skew(-0.1deg);
+    font-size: 45px;
+    margin-bottom: 20px;
+    line-height: 120%;
+    font-weight: 400;
+    text-align: left;
+}
+
+.project_section .fadeflow p {
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 500;
+}
+
+.project_section .fadeflow .arrow_wrap {
+    position: absolute;
+    left: 195px;
+    z-index: 1;
+    bottom: 226px;
+    width: 120px;
+    height: 50px;
+    margin-right: 0;
+}
+
+.project_section .fadeflow .swiper-button-next,
+.project_section .fadeflow .swiper-button-prev {
+    top: 0;
+    margin-top: 0;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+.project_section .fadeflow .swiper-button-prev {
+    left: 0;
+    background: url(../img/prev.svg) no-repeat center center / contain;
+}
+
+.project_section .fadeflow .swiper-button-next {
+    right: 0;
+    background: url(../img/next.svg) no-repeat center center / contain;
+}
+
+.project_section .fadeflow .swiper-button-next::after,
+.project_section .fadeflow .swiper-button-prev::after {
+    display: none;
+}
+
+.project_section .link{
+    width: 120px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffeba7;
+    color: #001458;
+    margin-top: 20px;
 }
 
 /* 닫기버튼 */

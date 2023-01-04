@@ -9,9 +9,12 @@
     <!--Import-->
     <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
     <script type="text/javascript" src="js/portfolio.js "></script>
+    <script type="text/javascript" src="js/jquery.easypiechart.js"></script>
+    <script type='text/javascript' src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <!-- link -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/portfolio.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="icon" href="img/icon/favicon.ico">
 </head>
 
@@ -143,10 +146,179 @@
 
         <section class="skill_section sub_section">
             <button class="close_btn hover-target"></button>
+            <div class="content_box">
+                <h3>Skill</h3>
+                <ul class="chart_wrap">
+                    <li>
+                        <p>HTML</p>
+                        <div class="chart" data-percent="95"><span class="percent"></span></div>
+                    </li>
+                    <li>
+                        <p>CSS</p>
+                        <div class="chart" data-percent="95"><span class="percent"></span></div>
+                    </li>
+                    <li>
+                        <p>Javascript & jQuery</p>
+                        <div class="chart" data-percent="80"><span class="percent"></span></div>
+                    </li>
+                </ul>
+            </div>
         </section>
 
         <section class="project_section sub_section">
             <button class="close_btn hover-target"></button>
+            <div class="content_box">
+                <h3>Project</h3>
+                <div class="coverflow">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="img_box">
+                                    <img src="img/slide_img_1.png" alt="slide 1">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="img_box">
+                                    <img src="img/slide_img_2.png" alt="slide 1">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="img_box">
+                                    <img src="img/slide_img_3.png" alt="slide 1">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="img_box">
+                                    <img src="img/slide_img_3.png" alt="slide 1">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="img_box">
+                                    <img src="img/slide_img_3.png" alt="slide 1">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="img_box">
+                                    <img src="img/slide_img_3.png" alt="slide 1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fadeflow">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="text_box">
+                                    <h3>
+                                        디딤돌
+                                    </h3>
+                                    <p>
+                                        프로젝트 구분 : 퍼블리싱 100%
+                                        <br>
+                                        제작기간 : 약 한달
+                                        <br>
+                                        가용 기기 : pc
+                                    </p>
+                                    <a href="#" onclick="return false;" class="link hover-target">
+                                        Website
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="text_box">
+                                    <h3>
+                                        트랜디 유럽
+                                    </h3>
+                                    <p>
+                                        프로젝트 구분 : 팀프로젝트 참여도(50%)
+                                        <br>
+                                        제작기간 : 7일
+                                        <br>
+                                        가용기기 : PC, 태블릿, 모바일
+                                    </p>
+                                    <a href="#" onclick="return false;" class="link hover-target">
+                                        Website
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="text_box">
+                                    <h3>
+                                        스피드골프
+                                    </h3>
+                                    <p>
+                                        프로젝트 구분 : 퍼블리싱 100%
+                                        <br>
+                                        제작기간 : 15일
+                                        <br>
+                                        가용기기 : 모바일
+                                    </p>
+                                    <a href="#" onclick="return false;" class="link hover-target">
+                                        Website
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="text_box">
+                                    <h3>
+                                        바이비츠
+                                    </h3>
+                                    <p>
+                                        프로젝트 구분 : 팀프로젝트 참여도(30%)
+                                        <br>
+                                        제작기간 : 7일
+                                        <br>
+                                        가용기기 : PC, 태블릿, 모바일
+                                    </p>
+                                    <a href="#" onclick="return false;" class="link hover-target">
+                                        Website
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="text_box">
+                                    <h3>
+                                        비츠썸원
+                                    </h3>
+                                    <p>
+                                        프로젝트 구분 : 팀프로젝트 참여도(30%)
+                                        <br>
+                                        제작기간 : 7일
+                                        <br>
+                                        가용기기 : PC, 태블릿, 모바일
+                                    </p>
+                                    <a href="#" onclick="return false;" class="link hover-target">
+                                        Website
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="text_box">
+                                    <h3>
+                                        신도리코 fabweaver
+                                    </h3>
+                                    <p>
+                                        프로젝트 구분 : 퍼블리싱 100%
+                                        <br>
+                                        제작기간 : 15일
+                                        <br>
+                                        가용기기 : PC, 태블릿, 모바일
+                                    </p>
+                                    <a href="#" onclick="return false;" class="link hover-target">
+                                        Website
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add Arrows -->
+                        <div class="arrow_wrap">
+                            <div class="swiper-button-next hover-target"></div>
+                            <div class="swiper-button-prev hover-target"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 
