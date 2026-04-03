@@ -1,0 +1,149 @@
+/* =============================================
+   토큰 & 변수
+   ============================================= */
+:root {
+  --bg-primary: #000000;
+  --bg-card: #1c1c1e;
+  --bg-white: #f5f5f7;
+
+  --text-primary: #f5f5f7;
+  --text-secondary: #6e6e73;
+  --text-dark: #1d1d1f;
+  --text-dark-sub: #515154;
+
+  --accent-blue: #2997ff;
+  --accent-green: #30d158;
+  --accent-yellow: #ffd60a;
+  --accent-red: #ff453a;
+  --accent-purple: #bf5af2;
+
+  --radius-card: 20px;
+  --radius-pill: 980px;
+
+  --nav-height: 48px;
+
+  --font: -apple-system, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* =============================================
+   기본 스타일
+   ============================================= */
+body {
+  font-family: var(--font);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  word-break: keep-all;
+}
+
+/* =============================================
+   공통 섹션 레이아웃
+   ============================================= */
+.section {
+  padding: 100px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.section-eyebrow {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 1.05;
+  color: var(--text-primary);
+}
+
+.section-sub {
+  font-size: 19px;
+  color: var(--text-secondary);
+  font-weight: 400;
+  margin-top: 16px;
+  line-height: 1.55;
+}
+
+/* =============================================
+   공통 버튼
+   ============================================= */
+.btn-primary {
+  background: #fff;
+  color: #000;
+  padding: 13px 26px;
+  border-radius: var(--radius-pill);
+  font-size: 15px;
+  font-weight: 500;
+  transition: opacity 0.2s, transform 0.2s;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  color: var(--accent-blue);
+  padding: 13px 4px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: opacity 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.btn-secondary:hover {
+  opacity: 0.75;
+}
+
+.icon-arrow {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  filter: invert(55%) sepia(90%) saturate(500%) hue-rotate(190deg) brightness(110%);
+}
+
+.contact-email .icon-arrow {
+  position: relative;
+  top: 1px;
+}
+
+/* =============================================
+   등장 애니메이션
+   ============================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.72s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.72s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =============================================
+   공통 br
+   ============================================= */
+
+br.large {
+  display: block;
+}
+
+br.medium,
+br.small {
+  display: none;
+}

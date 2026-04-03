@@ -7,9 +7,9 @@
     <meta name="description" content="정인우 — 웹 퍼블리셔 포트폴리오. 세계 1위 IT 기업(A사) 로컬라이징 경험을 보유한 프론트엔드 개발자." />
     <title>정인우 — Web Publisher</title>
     <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 </head>
 
 <body>
@@ -44,7 +44,7 @@
             <p class="hero-title reveal">보이는 것과 작동하는 것,<br /> 둘 다 완벽하게.</p>
             <div class="hero-cta reveal">
                 <a href="#work" class="btn-primary">Work 보기</a>
-                <a href="#contact" class="btn-secondary">연락하기 <img src="img/arrow.svg" alt="arrow" class="icon-arrow"></a>
+                <a href="#contact" class="btn-secondary">연락하기 <img src="img/icon/arrow.svg" alt="arrow" class="icon-arrow"></a>
             </div>
         </div>
         <div class="hero-scroll-hint">
@@ -56,8 +56,8 @@
     <section id="about" class="section">
         <div class="container">
             <p class="section-eyebrow reveal">About</p>
-            <h2 class="section-title reveal">디테일에 집착하는<br>웹 퍼블리셔.</h2>
-            <p class="section-sub reveal">세계 1위 IT 기업(A사) 로컬라이징부터 다양한 웹 프로젝트까지<br> 픽셀 하나까지 정확하게.</p>
+            <h2 class="section-title reveal">디테일에 집착하는<br/> 웹 퍼블리셔.</h2>
+            <p class="section-sub reveal">세계 1위 IT 기업(A사) 로컬라이징부터 다양한 웹 프로젝트까지<br class="large"/><br class="medium"/> 픽셀 하나까지 정확하게.</p>
 
             <div class="bento-grid">
                 <div class="bento-card span2 tall accent-blue reveal">
@@ -81,39 +81,47 @@
                     <p class="card-label dark">Skills</p>
                     <div class="skill-chips">
                         <span class="chip icon-chip blue">
-                            <i class="devicon-html5-original colored"></i>
+                            <span class="skill-icon icon-html5"></span>
                             <span class="chip-name">HTML5</span>
                         </span>
                         <span class="chip icon-chip blue">
-                            <i class="devicon-css3-original colored"></i>
+                            <span class="skill-icon icon-css3"></span>
                             <span class="chip-name">CSS3</span>
                         </span>
                         <span class="chip icon-chip blue">
-                            <i class="devicon-javascript-plain colored"></i>
+                            <span class="skill-icon icon-js"></span>
                             <span class="chip-name">JavaScript</span>
                         </span>
                         <span class="chip icon-chip blue">
-                            <i class="devicon-jquery-plain colored"></i>
+                            <span class="skill-icon icon-jquery"></span>
                             <span class="chip-name">jQuery</span>
                         </span>
                         <span class="chip icon-chip">
-                            <i class="devicon-photoshop-plain colored"></i>
+                            <span class="skill-icon icon-photoshop"></span>
                             <span class="chip-name">Photoshop</span>
                         </span>
                         <span class="chip icon-chip">
-                            <i class="devicon-illustrator-plain colored"></i>
+                            <span class="skill-icon icon-illustrator"></span>
                             <span class="chip-name">Illustrator</span>
                         </span>
                         <span class="chip icon-chip">
-                            <i class="devicon-github-original"></i>
+                            <span class="skill-icon icon-github"></span>
                             <span class="chip-name">GitHub</span>
                         </span>
+                        <span class="chip icon-chip ai">
+                            <span class="skill-icon icon-claude"></span>
+                            <span class="chip-name">Claude</span>
+                        </span>
+                        <span class="chip icon-chip ai">
+                            <span class="skill-icon icon-chatgpt"></span>
+                            <span class="chip-name">ChatGPT</span>
+                        </span>
                         <span class="chip icon-chip studying">
-                            <i class="devicon-react-original colored"></i>
+                            <span class="skill-icon icon-react"></span>
                             <span class="chip-name">React ✦ 학습중</span>
                         </span>
                         <span class="chip icon-chip studying">
-                            <i class="devicon-sass-original colored"></i>
+                            <span class="skill-icon icon-sass"></span>
                             <span class="chip-name">Sass ✦ 학습중</span>
                         </span>
                     </div>
@@ -121,7 +129,7 @@
                 <div class="bento-card reveal">
                     <p class="card-label">Currently</p>
                     <h3 class="card-title">열린 기회를<br>찾는 중.</h3>
-                    <p class="card-sub">새로운 팀과 함께<br>성장할 준비가 되어 있습니다.</p>
+                    <p class="card-sub">최고의 디테일을 함께 고민할 팀을 찾고 있습니다. 단순한 코딩을 넘어, 사용자 경험을 완성하는 마크업을 지향합니다.</p>
                 </div>
             </div>
         </div>
@@ -174,7 +182,7 @@
             <div class="works-grid">
                 <div class="work-card reveal" data-href="https://www.apple.com/kr/macbook-air/">
                     <div class="work-thumb">
-                        <img src="img/macbook-air.png" alt="맥북 에어 공식 페이지" />
+                        <img src="img/work/macbook-air.png" alt="맥북 에어 공식 페이지" />
                     </div>
                     <div class="work-info">
                         <p class="work-tag">A사 · 로컬라이징 &amp; 유지보수</p>
@@ -184,7 +192,7 @@
                 </div>
                 <div class="work-card reveal" data-href="https://www.apple.com/kr/macbook-pro/">
                     <div class="work-thumb">
-                        <img src="img/macbook-pro.png" alt="맥북 프로 공식 페이지" />
+                        <img src="img/work/macbook-pro.png" alt="맥북 프로 공식 페이지" />
                     </div>
                     <div class="work-info">
                         <p class="work-tag">A사 · 로컬라이징 &amp; 유지보수</p>
@@ -194,7 +202,7 @@
                 </div>
                 <div class="work-card reveal" data-href="https://www.apple.com/kr/displays/">
                     <div class="work-thumb">
-                        <img src="img/display.png" alt="디스플레이 공식 페이지" />
+                        <img src="img/work/display.png" alt="디스플레이 공식 페이지" />
                     </div>
                     <div class="work-info">
                         <p class="work-tag">A사 · 로컬라이징 &amp; 유지보수</p>
@@ -204,7 +212,7 @@
                 </div>
                 <div class="work-card reveal" data-href="https://www.apple.com/kr/studio-display/">
                     <div class="work-thumb">
-                        <img src="img/studio-display.png" alt="스튜디오 디스플레이 공식 페이지" />
+                        <img src="img/work/studio-display.png" alt="스튜디오 디스플레이 공식 페이지" />
                     </div>
                     <div class="work-info">
                         <p class="work-tag">A사 · 로컬라이징 &amp; 유지보수</p>
@@ -214,7 +222,7 @@
                 </div>
                 <div class="work-card reveal" data-href="https://www.apple.com/kr/studio-display-xdr/">
                     <div class="work-thumb">
-                        <img src="img/studio-display-xdr.png" alt="스튜디오 디스플레이 XDR 공식 페이지" />
+                        <img src="img/work/studio-display-xdr.png" alt="스튜디오 디스플레이 XDR 공식 페이지" />
                     </div>
                     <div class="work-info">
                         <p class="work-tag">A사 · 로컬라이징 &amp; 유지보수</p>
@@ -224,7 +232,7 @@
                 </div>
                 <div class="work-card reveal" data-href="https://www.apple.com/kr/apple-pay/transit/">
                     <div class="work-thumb">
-                        <img src="img/transit.png" alt="애플페이 교통카드 공식 페이지" />
+                        <img src="img/work/transit.png" alt="애플페이 교통카드 공식 페이지" />
                     </div>
                     <div class="work-info">
                         <p class="work-tag">A사 · 한국 단독 서비스 구축</p>
@@ -243,7 +251,7 @@
                 <p class="contact-eyebrow">Contact</p>
                 <h2 class="contact-title">함께 만들어요.</h2>
                 <p class="contact-sub">새로운 프로젝트나 기회가 있다면<br>언제든지 연락 주세요.</p>
-                <a href="mailto:nepomall@naver.com" class="contact-email">nepomall@naver.com <img src="img/arrow.svg" alt="arrow" class="icon-arrow"></a>
+                <a href="mailto:nepomall@naver.com" class="contact-email">nepomall@naver.com <img src="img/icon/arrow.svg" alt="arrow" class="icon-arrow"></a>
             </div>
         </div>
     </section>
