@@ -1,0 +1,165 @@
+/* =============================================
+   반응형 — responsive.css
+   브레이크포인트: 태블릿 1068px / 모바일 734px
+   ============================================= */
+
+/* ---- 태블릿 --------------------------------- */
+@media (max-width: 1068px) {
+  .container {
+    padding: 0 32px;
+  }
+
+  .nav-inner {
+    padding: 0 32px;
+  }
+
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bento-card.span3 {
+    grid-column: span 2;
+  }
+
+  .bento-card:last-child {
+    grid-column: span 2;
+  }
+
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-card {
+    padding: 60px 48px;
+  }
+
+  .footer-inner {
+    padding: 0 32px;
+  }
+
+  .exp-date {
+    min-width: 120px;
+  }
+}
+
+/* ---- 모바일 --------------------------------- */
+@media (max-width: 734px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .nav-inner {
+    padding: 0 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+
+  .hero {
+    padding: calc(var(--nav-height) + 40px) 20px 60px;
+  }
+
+  .hero-eyebrow {
+    font-size: 15px;
+  }
+
+  /* 벤토: span2는 2칸 유지, 나머지는 1칸 */
+  .bento-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .bento-card.span3 {
+    grid-column: span 2;
+  }
+
+  .bento-card:last-child {
+    grid-column: span 2;
+  }
+
+  .bento-card {
+    padding: 24px;
+  }
+
+  .card-big {
+    font-size: 48px;
+  }
+
+  /* 경력: 날짜를 위로 올려서 세로 배치 */
+  .exp-item {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .exp-date {
+    min-width: auto;
+    width: 100%;
+    padding-left: 22px;
+    margin-top: -8px;
+  }
+
+  .exp-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* 작업물: 1열 */
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    padding: 48px 28px;
+    border-radius: 16px;
+  }
+
+  .contact-title {
+    letter-spacing: -1.5px;
+  }
+
+  .footer-inner {
+    padding: 0 20px;
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+
+  .section-title {
+    letter-spacing: -1.5px;
+  }
+}
+
+/* ---- 소형 모바일 -------------------------- */
+@media (max-width: 480px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-card.span2,
+  .bento-card.span3 {
+    grid-column: span 1;
+  }
+
+  .hero-name {
+    letter-spacing: -3px;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary {
+    width: 200px;
+    text-align: center;
+  }
+}
