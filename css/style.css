@@ -189,7 +189,8 @@
   padding: 32px;
   overflow: hidden;
   position: relative;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease,
+              opacity 0.58s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .bento-card:hover {
@@ -309,7 +310,7 @@
 .icon-sass        { background-image: url('../img/icon/sass.svg'); }
 .icon-claude      { background-image: url('../img/icon/claude.svg'); }
 .icon-chatgpt     { background-image: url('../img/icon/chatgpt.svg'); }
-.icon-chatgpt     { background-image: url('../img/icon/chatgpt.svg'); }
+.icon-svn         { background-image: url('../img/icon/Subversion.svg'); }
 
 .chip.ai {
   background: rgba(160, 100, 240, 0.12);
@@ -401,6 +402,46 @@
 }
 
 /* =============================================
+   강점 섹션
+   ============================================= */
+.strengths-section {
+  padding: 0;
+  overflow: hidden;
+}
+
+.strengths-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.strength-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+  text-align: center;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.07);
+}
+
+.strength-block:last-child {
+  border-bottom: none;
+}
+
+.strength-text {
+  font-size: clamp(36px, 5.5vw, 51px);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  color: rgba(255, 255, 255, 0.88);
+  word-break: keep-all;
+}
+
+.strength-em {
+  font-style: normal;
+  color: var(--accent-blue);
+}
+
+/* =============================================
    작업물 그리드
    ============================================= */
 .works-grid {
@@ -415,7 +456,9 @@
   border-radius: var(--radius-card);
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.35s ease,
+              box-shadow 0.35s ease,
+              opacity 0.58s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
 }
 

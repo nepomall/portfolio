@@ -5,28 +5,55 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ------------------------------------------
-     1. 스크롤 등장 애니메이션
+     1. 스크롤 등장 애니메이션 (양방향)
      ------------------------------------------ */
   const revealEls = document.querySelectorAll('.reveal');
 
+  // 스크롤 방향 추적
+  let scrollDir = 'down';
+  let prevScrollY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    scrollDir = window.scrollY > prevScrollY ? 'down' : 'up';
+    prevScrollY = window.scrollY;
+  }, { passive: true });
+
   const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
+    entries.forEach(entry => {
+      const el = entry.target;
+
       if (entry.isIntersecting) {
-        // 같은 부모 내 카드들을 순차적으로 등장
-        const siblings = entry.target.parentElement.querySelectorAll('.reveal');
-        let delay = 0;
-        siblings.forEach((sib, idx) => {
-          if (sib === entry.target) delay = idx * 60;
-        });
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, delay);
-        revealObserver.unobserve(entry.target);
+        if (scrollDir === 'down') {
+          // 아래에서 올라올 때: 열 수 기반 순차 등장
+          const siblings = Array.from(el.parentElement.querySelectorAll('.reveal'));
+          const idx = siblings.indexOf(el);
+
+          const gridCols = getComputedStyle(el.parentElement).gridTemplateColumns;
+          const colCount = (gridCols && gridCols !== 'none')
+            ? gridCols.trim().split(/\s+/).length
+            : 1;
+          const delay = (colCount > 1) ? (idx % colCount) * 80 : idx * 80;
+
+          clearTimeout(el._revealTimer);
+          el._revealTimer = setTimeout(() => el.classList.add('visible'), delay);
+        } else {
+          // 위에서 내려올 때: 즉시 표시 (재애니메이션 없음)
+          el.classList.add('visible');
+        }
+      } else {
+        // 뷰포트를 벗어날 때
+        clearTimeout(el._revealTimer);
+        // 아래쪽으로 벗어남 (요소 top > 0) = 위로 스크롤하며 사라짐
+        // scrollDir 타이밍 경쟁조건 대비: boundingClientRect.top 으로도 감지
+        const rect = entry.boundingClientRect;
+        if (scrollDir === 'up' || rect.top > 0) {
+          el.classList.remove('visible');
+        }
+        // 위로 벗어남 (rect.top < 0) = 아래로 스크롤 중 지나간 요소 → visible 유지
       }
     });
   }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -60px 0px'
+    threshold: 0,
+    rootMargin: '0px 0px -100px 0px'
   });
 
   revealEls.forEach(el => revealObserver.observe(el));

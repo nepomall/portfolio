@@ -40,7 +40,7 @@ body {
    공통 섹션 레이아웃
    ============================================= */
 .section {
-  padding: 100px 0;
+  padding: 150px 0;
 }
 
 .container {
@@ -61,7 +61,7 @@ body {
   font-size: clamp(36px, 5vw, 56px);
   font-weight: 700;
   letter-spacing: -2px;
-  line-height: 1.05;
+  line-height: 1.2;
   color: var(--text-primary);
 }
 
@@ -125,9 +125,10 @@ body {
    ============================================= */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.72s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    transform 0.72s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(30px);
+  transition: opacity 0.58s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.58s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
 }
 
 .reveal.visible {

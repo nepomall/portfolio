@@ -29,6 +29,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .strength-block {
+    padding-top: 60px;
+  }
+
   .contact-card {
     padding: 60px 48px;
   }
@@ -126,6 +130,10 @@
   .exp-body {
     flex: 1;
     min-width: 0;
+  }
+
+  .strength-block {
+    padding: 50px 20px 0;
   }
 
   /* 작업물: 1열 */
