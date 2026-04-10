@@ -29,8 +29,12 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .strength-block {
-    padding-top: 60px;
+  .works-extra-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .strength-text {
+    padding: 0 40px;
   }
 
   .contact-card {
@@ -132,12 +136,16 @@
     min-width: 0;
   }
 
-  .strength-block {
-    padding: 50px 20px 0;
+  .strength-text {
+    padding: 0 24px;
   }
 
   /* 작업물: 1열 */
   .works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .works-extra-grid {
     grid-template-columns: 1fr;
   }
 

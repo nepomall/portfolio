@@ -41,8 +41,14 @@
   transition: color 0.2s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: #fff;
+}
+
+/* 스크롤 시 내비 배경 진해짐 (JS: classList.toggle('scrolled')) */
+#nav.scrolled {
+  background: rgba(0, 0, 0, 0.88);
 }
 
 .nav-hamburger {
@@ -402,38 +408,59 @@
 }
 
 /* =============================================
-   강점 섹션
+   강점 섹션 — 스크롤 핀 (Apple 스타일)
    ============================================= */
+
+/* 섹션 자체를 400vh로 길게 → 스크롤 공간 확보 */
 .strengths-section {
-  padding: 0;
-  overflow: hidden;
+  position: relative;
+  height: 400vh;
 }
 
-.strengths-inner {
-  display: flex;
-  flex-direction: column;
-}
-
-.strength-block {
+/* 실제 눈에 보이는 영역: 뷰포트에 sticky */
+.strengths-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 80px;
-  text-align: center;
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.07);
+  background: var(--bg-primary);
+  overflow: hidden;
 }
 
-.strength-block:last-child {
-  border-bottom: none;
-}
-
+/* 텍스트는 모두 absolute, 겹쳐서 대기 */
 .strength-text {
-  font-size: clamp(36px, 5.5vw, 51px);
+  position: absolute;
+  font-size: clamp(32px, 5vw, 64px);
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.22;
   letter-spacing: -0.03em;
   color: rgba(255, 255, 255, 0.88);
   word-break: keep-all;
+  text-align: center;
+  max-width: 860px;
+  padding: 0 48px;
+
+  /* 기본 상태: 아래에서 대기 */
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  pointer-events: none;
+}
+
+/* 현재 표시 중 */
+.strength-text.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* 이미 지나간 텍스트: 위로 퇴장 */
+.strength-text.past {
+  opacity: 0;
+  transform: translateY(-48px);
 }
 
 .strength-em {
@@ -533,6 +560,71 @@
   border-radius: var(--radius-pill);
   border: 0.5px solid rgba(41, 151, 255, 0.35);
 }
+
+/* 더보기 버튼 */
+.works-more-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.works-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 26px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  font-family: var(--font);
+}
+
+.works-more-btn:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.btn-chevron {
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  flex-shrink: 0;
+}
+
+.works-more-btn.expanded .btn-chevron {
+  transform: rotate(180deg);
+}
+
+/* 추가 카드 아코디언 래퍼 */
+.works-extra {
+  grid-column: 1 / -1;      /* works-grid 전체 너비 차지 */
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.works-extra-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding-top: 12px;        /* works-grid의 gap과 동일 */
+}
+
+/* 플레이스홀더 썸네일 */
+.work-thumb--ph {
+  background-size: cover;
+}
+
+.work-thumb--ph1 { background: linear-gradient(135deg, #1a1f2e 0%, #252d42 100%); }
+.work-thumb--ph2 { background: linear-gradient(135deg, #1a2a1e 0%, #1f3224 100%); }
+.work-thumb--ph3 { background: linear-gradient(135deg, #2a1a1a 0%, #3a2020 100%); }
+.work-thumb--ph4 { background: linear-gradient(135deg, #1e1a2a 0%, #2a2040 100%); }
+.work-thumb--ph5 { background: linear-gradient(135deg, #1a2226 0%, #1e2e36 100%); }
+.work-thumb--ph6 { background: linear-gradient(135deg, #24201a 0%, #362e1e 100%); }
 
 /* =============================================
    연락처
