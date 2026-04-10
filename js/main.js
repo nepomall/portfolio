@@ -156,6 +156,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ------------------------------------------
+     7. 더보기 / 숨기기 토글 (Work 섹션)
+     ------------------------------------------ */
+  const workMoreBtn = document.getElementById('workMoreBtn');
+  const extraCards = document.querySelectorAll('.work-extra');
+
+  workMoreBtn.addEventListener('click', () => {
+    const isExpanded = workMoreBtn.dataset.expanded === 'true';
+
+    if (!isExpanded) {
+      // 추가 카드 표시
+      extraCards.forEach(card => {
+        revealObserver.unobserve(card);
+        card.classList.add('work-shown');
+        card.classList.remove('visible');
+      });
+      void document.querySelector('.works-grid').offsetWidth; // 리플로우 강제
+
+      extraCards.forEach((card, i) => {
+        const delay = (i % 3) * 80;
+        setTimeout(() => card.classList.add('visible'), delay);
+      });
+
+      workMoreBtn.dataset.expanded = 'true';
+      workMoreBtn.querySelector('.btn-text').textContent = '숨기기';
+    } else {
+      // 추가 카드 숨기기
+      extraCards.forEach(card => card.classList.remove('visible'));
+      setTimeout(() => {
+        extraCards.forEach(card => card.classList.remove('work-shown'));
+      }, 580);
+
+      workMoreBtn.dataset.expanded = 'false';
+      workMoreBtn.querySelector('.btn-text').textContent = '더보기';
+    }
+  });
+
+
+  /* ------------------------------------------
      7. 스크롤 위치 기반 내비게이션 활성화
      ------------------------------------------ */
   const sections = document.querySelectorAll('section[id]');
